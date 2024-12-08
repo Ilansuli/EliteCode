@@ -4,33 +4,30 @@ import {
   CardMedia as MuiCardMedia,
   CardActionArea,
   CardProps,
+  CardHeader as MuiCardHeader,
 } from "@mui/material";
 import styled from "@emotion/styled";
 import { Card } from "../libs";
 import { TCodeBlock } from "../types";
-import { Link } from "react-router-dom";
+import { Link as LinkOrigin } from "react-router-dom";
 
 type CodeBlockCardProps = {
   codeBlock: TCodeBlock;
 } & CardProps;
 
-const CardMedia = styled(MuiCardMedia)`
-  background-position: top, center;
-  aspect-ratio: 1/1.2;
-  display: grid;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-end;
-  padding: var(--system-common-gap-small);
+const Link = styled(LinkOrigin)`
+  color: rgb(119, 176, 244, 1);
+  text-decoration: none;
 `;
 
 const CardContent = styled(MuiCardContent)`
   display: grid;
+  height: 200px;
+  background-color: rgb(23 23 23);
   gap: 1rem;
 `;
 
-const Title = styled.p`
-  height: 46px;
+const Title = styled.h3`
   align-self: start;
   text-overflow: ellipsis;
   overflow: hidden;

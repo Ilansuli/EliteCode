@@ -9,8 +9,7 @@ const Wrapper = styled.div`
 `;
 
 const Header = styled.header`
-  background: black;
-  color: rgb(216 246 250);
+  color: rgb(119, 176, 244, 1);
   text-align: center;
   @media (min-width: 700px) {
     text-align: unset;
@@ -24,8 +23,8 @@ const TitleContainer = styled.div`
   }
 `;
 
-const ColoredTitle = styled.h1`
-  color: lightblue;
+const ColoredMainTitle = styled.h1`
+  color: rgb(54 121 201);
 `;
 
 const Title = styled.h1``;
@@ -38,10 +37,12 @@ const SubTitleContainer = styled.div`
   }
 `;
 
-const CodeBlocksContainer = styled.section`
-  background-color: rgba(255, 255, 255, 1);
-`;
 const SubTitle = styled.h2``;
+
+const CodeBlocksContainer = styled.section`
+  background-color: rgb(54 121 201);
+  padding-block: 2rem;
+`;
 
 const LobbyPage: React.FC = () => {
   const { codeBlocks } = useCodeBlocks();
@@ -50,13 +51,13 @@ const LobbyPage: React.FC = () => {
       <Header>
         <Container>
           <TitleContainer>
-            <ColoredTitle>Teachers and students </ColoredTitle>
+            <ColoredMainTitle>Teachers and students </ColoredMainTitle>
             <Title>coding together</Title>
           </TitleContainer>
           <SubTitleContainer>
             <SubTitle>
               Elite Code provides teachers and students to collaborate and write
-              code together in real time
+              code together in real time. Choose a code block to begin
             </SubTitle>
           </SubTitleContainer>
         </Container>

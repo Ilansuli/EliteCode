@@ -10,14 +10,16 @@ import { LobbyPage, CodeBlockPage } from "./pages";
 
 const AppRouter: React.FC = () => {
   return (
-    <Router>
-      <MainHeader />
-      <Routes>
-        <Route path="/" element={<LobbyPage />} />
-        <Route path="/code/:id" element={<CodeBlockPage />} />
-        <Route path="*" element={<Navigate to="/" replace />} />
-      </Routes>
-    </Router>
+    <>
+      <Router>
+        <MainHeader />
+        <Routes>
+          <Route path="/" element={<LobbyPage />} />
+          <Route path="/code/:id" element={<CodeBlockPage />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </Router>
+    </>
   );
 };
 

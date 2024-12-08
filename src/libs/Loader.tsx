@@ -3,10 +3,10 @@ import CircularProgress from "@mui/material/CircularProgress";
 import styled from "@emotion/styled";
 
 const LoaderContainer = styled.div`
-  &.MuiCard-root {
-    background: var(--component-card-elevation-1);
-    color: var(--system-common-body);
-  }
+  min-height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const Loader: React.FC = () => {

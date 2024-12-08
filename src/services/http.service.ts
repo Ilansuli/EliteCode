@@ -28,7 +28,6 @@ async function ajax(
   data = null
 ): Promise<any> {
   try {
-    console.log(data, " data from httpService");
     const res = await axios({
       url: `${BASE_URL}${endpoint}`,
       method,

@@ -38,7 +38,6 @@ export const CodeBlocksProvider: React.FC<PropsWithChildren> = ({
   );
 };
 
-// Custom hook to use the context
 export const useCodeBlocks = (): TCodeBlockContext => {
   const context = useContext(CodeBlockContext);
   if (!context) {
