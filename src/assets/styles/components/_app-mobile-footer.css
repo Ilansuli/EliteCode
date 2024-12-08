@@ -1,0 +1,23 @@
+.app-mobile-footer {
+  background: var(--core-caution-40_25);
+
+  /* Mobile size */
+  display: flex;
+  justify-content: space-around;
+  position: sticky;
+  bottom: 0;
+  z-index: var(--core-z-index-sticky);
+  min-width: 240px;
+}
+
+.app-mobile-footer-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* Desktop size */
+@media (min-width: 700px) {
+  .app-mobile-footer {
+    display: none;
+  }
+}
