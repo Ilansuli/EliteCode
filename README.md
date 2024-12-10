@@ -1,7 +1,7 @@
   <h1>EliteCode</h1>
   <p>To use EliteCode, please visit the following link:</p>
   <a href="https://o-pea-m2qy.onrender.com">https://elitecode.com/</a>
-   <img src="https://res.cloudinary.com/dmmsf57ko/image/upload/v1733873001/EliteCode/rb0j9irxn3k4ealzywkl.png" width="1%" />
+   <img src="https://res.cloudinary.com/dmmsf57ko/image/upload/v1733873001/EliteCode/rb0j9irxn3k4ealzywkl.png" width="10%" />
 <p>This application is a real-time collaborative coding platform designed to help Tom, a passionate JavaScript lecturer, stay connected with his students. It features a lobby for selecting code challenges and interactive code blocks with mentor and student roles, live updates, and syntax highlighting. The platform promotes learning by tracking student progress.</p>
   <h2>Features</h2>
   <ul>
