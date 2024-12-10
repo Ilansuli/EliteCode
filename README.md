@@ -20,14 +20,11 @@
     <li>Socket.io</li>
     <li>MongoDB</li>
   </ul>
-  <img src="https://res.cloudinary.com/dmmsf57ko/image/upload/v1688390117/WhatsApp_Image_2023-07-03_at_16.06.55_opabvb.jpg"/>
-  <img src="https://res.cloudinary.com/dmmsf57ko/image/upload/v1688390118/WhatsApp_Image_2023-07-03_at_16.08.31_z3eubp.jpg"/>
-  <img src="https://res.cloudinary.com/dmmsf57ko/image/upload/v1688390118/WhatsApp_Image_2023-07-03_at_16.06.17_yz12iz.jpg"/>
+  <img src="https://res.cloudinary.com/dmmsf57ko/image/upload/v1733873107/EliteCode/0dfd905b-b184-4dec-9926-6169042d3510.png"/>
+  <img src="https://res.cloudinary.com/dmmsf57ko/image/upload/v1733873154/EliteCode/f7c91050-a641-4dd7-b00c-2141e29ccbf9.png">
  <div>
- <img width="18%"  src="https://res.cloudinary.com/dmmsf57ko/image/upload/v1688390117/WhatsApp_Image_2023-07-03_at_16.09.51-removebg-preview_ztyuic.png"/>
- <img width="18%"  src="https://res.cloudinary.com/dmmsf57ko/image/upload/v1688390118/WhatsApp_Image_2023-07-03_at_16.09.17-removebg-preview_wpltjn.png"/>
- <img width="18%"  src="https://res.cloudinary.com/dmmsf57ko/image/upload/v1688390117/WhatsApp_Image_2023-07-03_at_16.09.31-removebg-preview_gcwvni.png"/>
- <img width="18%"  src="https://res.cloudinary.com/dmmsf57ko/image/upload/v1688390118/WhatsApp_Image_2023-07-03_at_16.12.20-removebg-preview_k2qk1b.png"/>
- <img width="18%"  src="https://res.cloudinary.com/dmmsf57ko/image/upload/v1688390118/WhatsApp_Image_2023-07-03_at_16.10.12-removebg-preview_bdhumm.png"/>
+ <img width="33%"  src="https://res.cloudinary.com/dmmsf57ko/image/upload/v1733873419/EliteCode/zaiqzihblibkroanxt0z.png"/>
+ <img width="33%"  src="https://res.cloudinary.com/dmmsf57ko/image/upload/v1733873414/EliteCode/k6dydiyb8df95c5nt8jg.png"/>
+ <img width="33%"  src="https://res.cloudinary.com/dmmsf57ko/image/upload/v1733873557/EliteCode/fz4t03z5vfh6ii4b0je6.png"/>
 </div>
  
