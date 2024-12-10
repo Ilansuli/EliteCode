@@ -5,8 +5,8 @@ import CodeBlockCard from "./CodeBlockCard";
 const ListContainer = styled.div`
   display: grid;
   gap: 0.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
   padding-block: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
 `;
 
 type CodeBlockListProps = {

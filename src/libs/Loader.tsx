@@ -1,5 +1,5 @@
 import React from "react";
-import CircularProgress from "@mui/material/CircularProgress";
+import { CircularProgress, CircularProgressProps } from "@mui/material";
 import styled from "@emotion/styled";
 
 const LoaderContainer = styled.div`
@@ -9,10 +9,10 @@ const LoaderContainer = styled.div`
   align-items: center;
 `;
 
-const Loader: React.FC = () => {
+const Loader: React.FC<CircularProgressProps> = ({ sx, ...props }) => {
   return (
     <LoaderContainer>
-      <CircularProgress />
+      <CircularProgress sx={sx as any} {...props} />
     </LoaderContainer>
   );
 };

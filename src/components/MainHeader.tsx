@@ -1,7 +1,8 @@
 import styled from "@emotion/styled";
-import { Container, IconButton } from "../libs";
-import { ReactComponent as Logo } from "../assets/images/elite.svg";
 import { useNavigate } from "react-router-dom";
+import { Container } from "../libs";
+import { ReactComponent as Logo } from "../assets/images/elite.svg";
+import { SvgIcon } from "@mui/material";
 
 const Header = styled.header`
   background-color: rgba(23, 23, 23, 0.5);

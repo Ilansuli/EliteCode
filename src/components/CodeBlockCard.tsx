@@ -1,29 +1,20 @@
-import React from "react";
+import { useNavigate } from "react-router-dom";
 import {
   CardContent as MuiCardContent,
-  CardMedia as MuiCardMedia,
   CardActionArea,
   CardProps,
-  CardHeader as MuiCardHeader,
+  Card,
 } from "@mui/material";
 import styled from "@emotion/styled";
-import { Card } from "../libs";
 import { TCodeBlock } from "../types";
-import { Link as LinkOrigin } from "react-router-dom";
 
 type CodeBlockCardProps = {
   codeBlock: TCodeBlock;
 } & CardProps;
 
-const Link = styled(LinkOrigin)`
-  color: rgb(119, 176, 244, 1);
-  text-decoration: none;
-`;
-
 const CardContent = styled(MuiCardContent)`
   display: grid;
   height: 200px;
-  background-color: rgb(23 23 23);
   gap: 1rem;
 `;
 
@@ -33,20 +24,21 @@ const Title = styled.h3`
   overflow: hidden;
 `;
 
-const CodeBlockCard: React.FC<CodeBlockCardProps> = ({
-  codeBlock,
-  ...props
-}) => {
+const CodeBlockCard: React.FC<CodeBlockCardProps> = ({ codeBlock }) => {
+  const navigate = useNavigate();
+
   return (
-    <Link to={`/code/${codeBlock._id}`}>
-      <Card {...props}>
-        <CardActionArea>
-          <CardContent>
-            <Title>{codeBlock.title}</Title>
-          </CardContent>
-        </CardActionArea>
-      </Card>
-    </Link>
+    <Card
+      onClick={() => {
+        navigate(`/code/${codeBlock._id}`);
+      }}
+    >
+      <CardActionArea>
+        <CardContent>
+          <Title>{codeBlock.title}</Title>
+        </CardContent>
+      </CardActionArea>
+    </Card>
   );
 };
 

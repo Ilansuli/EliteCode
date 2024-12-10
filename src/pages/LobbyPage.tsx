@@ -1,15 +1,15 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { CodeBlockList } from "../components";
-import { useCodeBlocks } from "../context/CodeBlockContext";
-import { Container, Loader } from "../libs";
+import { useCodeBlocks } from "../context";
+import { Container, Loader as LoaderOrigin } from "../libs";
 
 const Wrapper = styled.div`
   min-height: 100dvh;
 `;
 
 const Header = styled.header`
-  color: rgb(119, 176, 244, 1);
+  color: rgba(119, 176, 244, 1);
   text-align: center;
   @media (min-width: 700px) {
     text-align: unset;
@@ -24,7 +24,7 @@ const TitleContainer = styled.div`
 `;
 
 const ColoredMainTitle = styled.h1`
-  color: rgb(54 121 201);
+  color: rgba(54, 121, 201, 1);
 `;
 
 const Title = styled.h1``;
@@ -32,6 +32,10 @@ const Title = styled.h1``;
 const SubTitleContainer = styled.div`
   min-width: 300px;
   margin-block: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
   @media (min-width: 700px) {
     max-width: 50%;
   }
@@ -40,25 +44,33 @@ const SubTitleContainer = styled.div`
 const SubTitle = styled.h2``;
 
 const CodeBlocksContainer = styled.section`
-  background-color: rgb(54 121 201);
+  background-color: rgba(54, 121, 201, 1);
   padding-block: 2rem;
+`;
+
+const Loader = styled(LoaderOrigin)`
+  &.MuiCircularProgress-root {
+    color: rgba(23, 23, 23, 1);
+  }
 `;
 
 const LobbyPage: React.FC = () => {
   const { codeBlocks } = useCodeBlocks();
+
   return (
     <Wrapper>
       <Header>
         <Container>
           <TitleContainer>
-            <ColoredMainTitle>Teachers and students </ColoredMainTitle>
+            <ColoredMainTitle>Mentors and students </ColoredMainTitle>
             <Title>coding together</Title>
           </TitleContainer>
           <SubTitleContainer>
             <SubTitle>
-              Elite Code provides teachers and students to collaborate and write
-              code together in real time. Choose a code block to begin
+              Elite Code provides mentors and students to collaborate and write
+              code together in real time.
             </SubTitle>
+            <SubTitle>Choose a code block to begin.</SubTitle>
           </SubTitleContainer>
         </Container>
       </Header>

@@ -22,11 +22,11 @@ const httpService = {
   },
 };
 
-async function ajax(
+const ajax = async (
   endpoint: string,
   method = "GET",
   data = null
-): Promise<any> {
+): Promise<any> => {
   try {
     const res = await axios({
       url: `${BASE_URL}${endpoint}`,
@@ -43,6 +43,6 @@ async function ajax(
     console.dir(err);
     throw err;
   }
-}
+};
 
 export default httpService;

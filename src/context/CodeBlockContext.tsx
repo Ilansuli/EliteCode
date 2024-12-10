@@ -38,10 +38,12 @@ export const CodeBlocksProvider: React.FC<PropsWithChildren> = ({
   );
 };
 
-export const useCodeBlocks = (): TCodeBlockContext => {
+const useCodeBlocks = (): TCodeBlockContext => {
   const context = useContext(CodeBlockContext);
   if (!context) {
     throw new Error("useCodeBlocks must be used within a CodeBlocksProvider");
   }
   return context;
 };
+
+export default useCodeBlocks;

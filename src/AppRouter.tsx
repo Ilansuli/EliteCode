@@ -7,11 +7,13 @@ import {
 } from "react-router-dom";
 import { MainHeader } from "./components";
 import { LobbyPage, CodeBlockPage } from "./pages";
+import { ScrollToTop } from "./libs";
 
 const AppRouter: React.FC = () => {
   return (
     <>
       <Router>
+        <ScrollToTop />
         <MainHeader />
         <Routes>
           <Route path="/" element={<LobbyPage />} />

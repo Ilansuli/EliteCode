@@ -12,6 +12,8 @@
     "@types/react-dom": "^18.0.0",
     "@vitejs/plugin-react": "^3.1.0",
     "axios": "^1.7.9",
+    "esprima": "^4.0.1",
+    "framer-motion": "^11.13.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^7.0.2",
@@ -47,6 +49,7 @@
     ]
   },
   "devDependencies": {
+    "@types/esprima": "^4.0.6",
     "@types/socket.io-client": "^3.0.0"
   }
 }
