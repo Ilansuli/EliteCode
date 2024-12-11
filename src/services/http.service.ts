@@ -2,7 +2,7 @@ import Axios from "axios";
 
 const BASE_URL: string =
   process.env.NODE_ENV === "production"
-    ? `${process.env.BASE_URL}/api/`
+    ? `${process.env.VITE_BASE_URL}/api/`
     : "//localhost:3030/api/";
 
 const axios = Axios.create({
@@ -36,6 +36,7 @@ const ajax = async (
       data,
       params: method === "GET" ? data : null,
     });
+    console.log(BASE_URL);
     return res.data;
   } catch (err) {
     console.log(
