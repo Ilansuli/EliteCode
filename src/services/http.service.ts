@@ -1,9 +1,7 @@
 import Axios from "axios";
 
 const BASE_URL: string =
-  import.meta.env.MODE === "production"
-    ? `${import.meta.env.VITE_BASE_URL}/api/`
-    : "//localhost:3030/api/";
+  import.meta.env.MODE === "production" ? `/api/` : "//localhost:3030/api/";
 
 const axios = Axios.create({
   withCredentials: true,
@@ -36,6 +34,7 @@ const ajax = async (
       data,
       params: method === "GET" ? data : null,
     });
+    console.log(BASE_URL);
     return res.data;
   } catch (err) {
     console.log(
