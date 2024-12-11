@@ -4,7 +4,10 @@ const EMIT_JOIN_ROOM = "join-room";
 const EMIT_LEAVE_ROOM = "leave-room";
 const EMIT_CODE_UPDATE = "update-code-content";
 
-const baseUrl = process.env.NODE_ENV === "production" ? "" : "//localhost:3030";
+const baseUrl =
+  process.env.NODE_ENV === "production"
+    ? process.env.BASE_URL
+    : "//localhost:3030";
 
 const createSocketService = () => {
   let socket: Socket | null = null;
