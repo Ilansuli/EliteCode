@@ -6,7 +6,7 @@ const EMIT_CODE_UPDATE = "update-code-content";
 
 const baseUrl =
   process.env.NODE_ENV === "production"
-    ? process.env.BASE_API_URL
+    ? process.env.BASE_URL
     : "//localhost:3030";
 
 const createSocketService = () => {
