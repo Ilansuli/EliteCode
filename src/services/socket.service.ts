@@ -5,8 +5,8 @@ const EMIT_LEAVE_ROOM = "leave-room";
 const EMIT_CODE_UPDATE = "update-code-content";
 
 const baseUrl =
-  process.env.NODE_ENV === "production"
-    ? process.env.BASE_URL
+  import.meta.env.NODE_ENV === "production"
+    ? import.meta.env.VITE_API_URL
     : "//localhost:3030";
 
 const createSocketService = () => {
