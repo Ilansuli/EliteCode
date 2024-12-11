@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Editor } from "@monaco-editor/react";
 import styled from "@emotion/styled";
@@ -10,7 +10,6 @@ import { Container as ContainerOrigin, Loader } from "../libs";
 import { motion, AnimatePresence } from "framer-motion";
 import { EmojiEmotions } from "@mui/icons-material";
 import { Button as MuiButton } from "@mui/material";
-
 const Wrapper = styled.div`
   min-height: 100dvh;
 `;
@@ -74,7 +73,6 @@ const CodeBlockPage: React.FC = () => {
   const [roomStudentsCount, setRoomStudentsCount] = useState<number>(0);
   const [isMentor, setIsMentor] = useState<boolean>(false);
   const [isSolutionCorrect, setIsSolutionCorrect] = useState<boolean>(false);
-  const isCurrentUserTyping = useRef(false);
 
   //setting the specific codeBlock
   useEffect(() => {
@@ -95,21 +93,14 @@ const CodeBlockPage: React.FC = () => {
     socketService.joinRoom(codeBlockId);
 
     //socket listeners
-    socketService.on("update-code-content", (newContent: string) => {
-      if (!isCurrentUserTyping.current) {
-        setCodeContent(newContent);
-      }
-    });
+    socketService.on("update-code-content", setCodeContent);
     socketService.on("set-is-mentor", setIsMentor);
     socketService.on("update-room-count", setRoomStudentsCount);
     socketService.on("force-leave-room", forceLeaveRoom);
 
     return () => {
       socketService.terminate();
-      socketService.off("update-code-content");
-      socketService.off("set-is-mentor");
-      socketService.off("update-room-count");
-      socketService.off("force-leave-room");
+      console.log("unmount");
     };
   }, [codeBlockId]);
 
@@ -121,13 +112,8 @@ const CodeBlockPage: React.FC = () => {
 
   const handleCodeChange = (newCodeContent: string = "") => {
     if (!codeBlockId) return;
-    isCurrentUserTyping.current = true;
-    console.log("code changed");
-    setCodeContent(newCodeContent);
     socketService.updateCode(codeBlockId, newCodeContent);
-    setTimeout(() => {
-      isCurrentUserTyping.current = false;
-    }, 0);
+    setCodeContent(newCodeContent);
   };
 
   const checkSolution = (): boolean => {

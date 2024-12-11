@@ -36,11 +36,16 @@ const createSocketService = () => {
     updateCode(roomId: string, newCodeContent: string | undefined) {
       this.emit(EMIT_CODE_UPDATE, { roomId, newCodeContent });
     },
-
+    getSocketId() {
+      return socket?.id;
+    },
     terminate() {
-      console.log("disconnect");
       socket?.disconnect();
       socket = null;
+      this.off("update-code-content");
+      this.off("set-is-mentor");
+      this.off("update-room-count");
+      this.off("force-leave-room");
     },
   };
 
