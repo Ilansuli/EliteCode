@@ -1,20 +1,19 @@
 import { io, Socket } from "socket.io-client";
 
-const EMIT_JOIN_ROOM = "join-room";
-const EMIT_LEAVE_ROOM = "leave-room";
-const EMIT_CODE_UPDATE = "update-code-content";
+const EMIT_JOIN_ROOM: string = "join-room";
+const EMIT_LEAVE_ROOM: string = "leave-room";
+const EMIT_CODE_UPDATE: string = "update-code-content";
 
-const baseUrl =
+const BASE_URL: string =
   import.meta.env.MODE === "production"
-    ? import.meta.env.VITE_API_URL
+    ? `${import.meta.env.VITE_API_URL}`
     : "//localhost:3030";
-
 const createSocketService = () => {
   let socket: Socket | null = null;
 
   const socketService = {
     setup() {
-      socket = io(baseUrl);
+      socket = io(BASE_URL);
     },
 
     on(eventName: string, cb: (data: any) => void) {

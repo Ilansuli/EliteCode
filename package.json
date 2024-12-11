@@ -26,7 +26,8 @@
   "scripts": {
     "start": "vite",
     "build": "vite build",
-    "test": "vite preview",
+    "test": "vite test",
+    "preview": "vite preview",
     "eject": "vite eject"
   },
   "eslintConfig": {
