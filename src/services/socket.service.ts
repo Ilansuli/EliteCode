@@ -1,7 +1,6 @@
 import { io, Socket } from "socket.io-client";
 
 const EMIT_JOIN_ROOM: string = "join-room";
-const EMIT_LEAVE_ROOM: string = "leave-room";
 const EMIT_CODE_UPDATE: string = "update-code-content";
 
 const BASE_URL: string =
@@ -34,17 +33,12 @@ const createSocketService = () => {
       this.emit(EMIT_JOIN_ROOM, { roomId });
     },
 
-    leaveRoom(roomId: string) {
-      if (socket) {
-        socket.emit(EMIT_LEAVE_ROOM, { roomId });
-      }
-    },
-
     updateCode(roomId: string, newCodeContent: string | undefined) {
       this.emit(EMIT_CODE_UPDATE, { roomId, newCodeContent });
     },
 
     terminate() {
+      console.log("disconnect");
       socket?.disconnect();
       socket = null;
     },

@@ -100,8 +100,8 @@ const CodeBlockPage: React.FC = () => {
     socketService.on("force-leave-room", forceLeaveRoom);
 
     return () => {
-      socketService.leaveRoom(codeBlockId);
       socketService.terminate();
+      console.log("unmount");
     };
   }, [codeBlockId]);
 
