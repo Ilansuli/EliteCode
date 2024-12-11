@@ -5,7 +5,7 @@ const EMIT_LEAVE_ROOM = "leave-room";
 const EMIT_CODE_UPDATE = "update-code-content";
 
 const baseUrl =
-  import.meta.env.NODE_ENV === "production"
+  import.meta.env.MODE === "production"
     ? import.meta.env.VITE_API_URL
     : "//localhost:3030";
 
