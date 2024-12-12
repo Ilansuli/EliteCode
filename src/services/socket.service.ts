@@ -7,6 +7,7 @@ const BASE_URL: string =
   import.meta.env.MODE === "production"
     ? `${import.meta.env.VITE_API_URL}`
     : "//localhost:3030";
+
 const createSocketService = () => {
   let socket: Socket | null = null;
 

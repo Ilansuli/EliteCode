@@ -14,6 +14,7 @@
     "axios": "^1.7.9",
     "esprima": "^4.0.1",
     "framer-motion": "^11.13.5",
+    "lodash": "^4.17.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^7.0.2",
@@ -50,6 +51,7 @@
   },
   "devDependencies": {
     "@types/esprima": "^4.0.6",
+    "@types/lodash": "^4.17.13",
     "@types/socket.io-client": "^3.0.0"
   }
 }
