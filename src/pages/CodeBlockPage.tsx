@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Editor } from "@monaco-editor/react";
 import styled from "@emotion/styled";
@@ -72,8 +72,7 @@ const CodeBlockPage: React.FC = () => {
   const [codeContent, setCodeContent] = useState<string>("");
   const [roomStudentsCount, setRoomStudentsCount] = useState<number>(0);
   const [isMentor, setIsMentor] = useState<boolean>(false);
-  const [isSolutionCorrect, setIsSolutionCorrect] = useState<boolean>(false);
-
+  const [isCodeSolved, setIsCodeSolved] = useState<boolean>(false);
   //setting the specific codeBlock
   useEffect(() => {
     if (codeBlocks) {
@@ -100,14 +99,13 @@ const CodeBlockPage: React.FC = () => {
 
     return () => {
       socketService.terminate();
-      console.log("unmount");
     };
   }, [codeBlockId]);
 
   //check solution and trigger smiley face animation if solved (not in handleCodeChange() because of state delay)
   useEffect(() => {
     if (!codeContent) return;
-    setIsSolutionCorrect(checkSolution());
+    setIsCodeSolved(checkSolution());
   }, [codeContent]);
 
   const handleCodeChange = (newCodeContent: string = "") => {
@@ -168,7 +166,7 @@ const CodeBlockPage: React.FC = () => {
         </CodeEditorContainer>
         {/* smiley face animation */}
         <AnimatePresence>
-          {isSolutionCorrect && (
+          {isCodeSolved && (
             <motion.div
               className="svg-overlay"
               initial={{ scale: 0, opacity: 0 }}

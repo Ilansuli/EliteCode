@@ -36,6 +36,7 @@ const createSocketService = () => {
     updateCode(roomId: string, newCodeContent: string | undefined) {
       this.emit(EMIT_CODE_UPDATE, { roomId, newCodeContent });
     },
+
     getSocketId() {
       return socket?.id;
     },
